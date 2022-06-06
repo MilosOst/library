@@ -152,10 +152,6 @@ function validateForm(e) {
 
 let myLibrary = new Library();
 
-let a = new Book('Game of Thrones');
-let b = new Book('Dune');
-let c = new Book('Harry Potter', 'JK Rowling');
-
 // Define edit and delete button for global use
 displayBooks(myLibrary);
 
