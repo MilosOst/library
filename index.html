@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,6 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <div class="wrapper">
         <nav class="header">
@@ -23,18 +25,47 @@
         </nav>
         <div class="greeting">
             <h2>Hello User!</h2>
-            <h4>Welcome to your Personal ibrary</h4>
+            <h4>Welcome to your Personal Library</h4>
         </div>
         <div class="collection">
             <h3>My Collection</h3>
             <div class="add-box">
                 <button class="btn" id="add-btn">+ Add Book</button>
             </div>
+            <dialog class="modal" id="modal">
+                <form action="" class="add-book-form" id="add-form" method="dialog">
+                    <h2>Add New Book</h2>
+                    <img src="./imgs/x.svg" alt="Close Button" id="close-btn">
+
+                    <div class="form-entry">
+                        <label for="book-title">Book</label>
+                        <input type="text" id="book-title" minlength="1" maxlength="60" required>
+                    </div>
+                    <div class="form-entry">
+                        <label for="author-name">Author</label>
+                        <input type="text" id="author-name" minlength="1" maxlength="30" required>
+                    </div>
+                    <div class="form-entry">
+                        <label for="page-count">Page Count</label>
+                        <input type="number" id="page-count" minlength="1" required>
+                    </div>
+                    <div class="form-entry">
+                        <label for="pages-read">Pages Read</label>
+                        <input type="number" id="pages-read" minlength="1" required>
+                        <span class="inactive" id="page-num-error">The # of pages read should be less than or equal to the total
+                            pages.</span>
+                    </div>
+                    <button class="btn btn-submit" type="submit">Submit</button>
+                </form>
+
+
+            </dialog>
+
             <div class="collection-grid">
                 <div class="book-card">
                     <p class="title">The Last Wish</p>
                     <p class="author">Andrzej Sapkowski</p>
-                    <p>288</p>
+                    <p>288 Pages</p>
                     <p class="read-total">Read: 10 | 288</p>
                     <div class="buttons">
                         <button class="edit">
@@ -48,21 +79,21 @@
                 <div class="book-card">
                     <p class="title">Sword of Destiny</p>
                     <p class="author">Andrzej Sapkowski</p>
-                    <p>384</p>
+                    <p>384 Pages</p>
                     <p class="read-total">Read: 0 | 384</p>
                     <div class="buttons">
                         <button class="edit">
-                            <img src="./imgs/edit.svg" alt="Edit Button">
+                            <img src="./imgs/edit.svg" alt="Edit Button Icon">
                         </button>
                         <button class="delete">
-                            <img src="./imgs/delete.svg" alt="Delete Button">
+                            <img src="./imgs/delete.svg" alt="Delete Button Icon">
                         </button>
                     </div>
                 </div>
                 <div class="book-card">
                     <p class="title">Blood of Elves</p>
                     <p class="author">Andrzej Sapkowski</p>
-                    <p>320</p>
+                    <p>320 Pages</p>
                     <p class="read-total">Read: 0 | 384</p>
                     <div class="buttons">
                         <button class="edit">
@@ -74,8 +105,12 @@
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
-    
+
+    <script src="./script.js"></script>
+
 </body>
+
 </html>
